@@ -5,7 +5,8 @@ export default {
     extend: {
       fontFamily: {
         archivo: ["Archivo Black", "sans-serif"],
-        saira: ["Saira Extra Condensed", "sans-serif"]
+        saira: ["Saira Extra Condensed", "sans-serif"],
+        youth: ["Youth", "sans-serif"]
       },
       keyframes: {
         slide: {

@@ -5,6 +5,7 @@ import ProjectsSection from "./components/ProjectsSection";
 import InfoSection from "./components/InfoSection";
 import MenuButton from "./components/mobileMenu/Menubutton";
 import MobileProjectSection from "./components/mobileMenu/MobileProjectSection";
+import ContactMenu from "./components/ContactMenu";
 
 import { useState, useEffect } from "react";
 
@@ -13,6 +14,7 @@ function App() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [contactMenuOpen, setContactMenuOpen] = useState(false);
   const { width } = useWindowSize();
   const [info, setInfo] = useState([]);
 
@@ -33,8 +35,12 @@ function App() {
   }
 
   return (
-    <main className="main ">
-      <InfoSection />
+    <main className="main">
+      <InfoSection setContactMenuOpen={setContactMenuOpen} />
+      <ContactMenu
+        setContactMenuOpen={setContactMenuOpen}
+        contactMenuOpen={contactMenuOpen}
+      />
 
       <MenuButton setIsMenuOpen={setIsMenuOpen} isModalOpen={isModalOpen} />
 

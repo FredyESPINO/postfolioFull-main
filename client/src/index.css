@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Youth";
+  src: url("./font/dominantyouth-mlzax.ttf") format("truetype");
+  /* Ajusta la ruta según tu estructura de carpetas */
+}
+
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     display: none;
