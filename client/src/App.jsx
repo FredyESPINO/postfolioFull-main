@@ -35,7 +35,7 @@ function App() {
   if (loading) {
     return <main className="main bg-black"></main>;
   }
-
+// 66
   return (
     <m.main
       initial={{ opacity: 0, y: -200 }}
