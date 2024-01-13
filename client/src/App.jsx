@@ -1,11 +1,14 @@
 import useWindowSize from "./hooks/useWindowSize";
 import { fetchProjects, fetchData } from "./client";
+import { AnimatePresence } from "framer-motion";
+import { motion as m } from "framer-motion";
 
 import ProjectsSection from "./components/ProjectsSection";
 import InfoSection from "./components/InfoSection";
 import MenuButton from "./components/mobileMenu/Menubutton";
 import MobileProjectSection from "./components/mobileMenu/MobileProjectSection";
 import ContactMenu from "./components/ContactMenu";
+import LoadingScreen from "./components/LoadingScreen";
 
 import { useState, useEffect } from "react";
 
@@ -29,13 +32,16 @@ function App() {
       .finally(() => setLoading(false));
   }, []);
 
-  useEffect(() => {}, [info]);
   if (loading) {
-    return <h1>Cargando</h1>;
+    return <main className="main bg-black"></main>;
   }
 
   return (
-    <main className="main">
+    <m.main
+      initial={{ opacity: 0, y: -200 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="main bg-black"
+    >
       <InfoSection setContactMenuOpen={setContactMenuOpen} />
       <ContactMenu
         setContactMenuOpen={setContactMenuOpen}
@@ -60,7 +66,7 @@ function App() {
           setIsModalOpen={setIsModalOpen}
         />
       )}
-    </main>
+    </m.main>
   );
 }
 
