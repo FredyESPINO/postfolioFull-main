@@ -33,7 +33,7 @@ function App() {
   }, []);
   // TEST
   if (loading) {
-    return <main className="main bg-black"></main>;
+    return <main className="main bg-black">test</main>;
   }
   // 66
   return (
