@@ -31,11 +31,11 @@ function App() {
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
   }, []);
-
+  // TEST
   if (loading) {
     return <main className="main bg-black"></main>;
   }
-// 66
+  // 66
   return (
     <m.main
       initial={{ opacity: 0, y: -200 }}
